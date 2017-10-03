@@ -1,0 +1,83 @@
+Introduction to Github
+6 Oct 2017
+
+Kyle Shannon
+Research Computing, Boise State University
+kyleshannon@boisestate.edu
+http://rcs.boisestate.edu
+
+* Introduction
+
+Who am I?
+
+- Programmer for Research Computing
+- Experience in ANSI C/C++ 98/Go/Python
+- GIS Programming (open source)
+- Not a git/Github pro
+
+* Version Control Systems (VCS)
+
+- Used to track changes in text files
+- Typically used for source code
+- Easy to switch between states of source code
+- Many flavors: `git`, mercurial (`hg`), bazaar (`bzr`), `fossil`
+- Not good with binary files
+
+* git
+
+- Most prominent Distributed VCS (DVCS)
+- Developed and used for the Linux kernel
+- Used by Github
+
+* Github
+
+- Online system for version control, issue tracking, and documentation
+- User level management of repositories
+
+* Github Forking
+
+- Make a copy of a repository
+- Make whatever changes you please (be aware of licensing)
+
+* Github Pull Requests
+
+- Ask the original owner to pull in changes
+- Github provides code review faclities
+
+* Branches
+
+- Good way to handle stable/dev versions
+- Implement new features without risking changes in stable branches
+
+* git commands
+
+- clone -> create a local repository
+- status -> local repository info
+- diff -> what has changed since last commit
+- commit -> commit changes to local repo
+- push -> push local changes to remote repo (also new branch)
+- branch -> create a new local branch
+
+* Issue Tracking
+
+- Encourage good reports (templates)
+- Reproducable bugs are best
+
+* Documentation
+
+- Markdown is a simple mark up language
+- Great for README, documentation, tutorials, etc.
+- You can intermingle HTML
+
+* Miscellaneous
+
+* Github commit hooks
+
+- Continuous Integration (CI)
+* The Bad
+
+- `git` isn't always intuitive
+- UI issues
+.image https://imgs.xkcd.com/comics/git.png
+
+
