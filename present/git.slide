@@ -12,7 +12,7 @@ Who am I?
 
 - Programmer for Research Computing
 - Experience in ANSI C/C++ 98/Go/Python
-- GIS Programming (open source)
+- A lot of FOSS GIS Programming (GDAL)
 - Not a git/Github pro
 
 * Version Control Systems (VCS)
@@ -34,34 +34,18 @@ Who am I?
 - Online system for version control, issue tracking, and documentation
 - User level management of repositories
 
-* Github Forking
+* Why use it?
 
-- Make a copy of a repository
-- Make whatever changes you please (be aware of licensing)
-
-* Github Pull Requests
-
-- Ask the original owner to pull in changes
-- Github provides code review faclities
+- No (or fewer) rogue copies of software
+- Single source for syncing collaborative work
+- Multiple versions can live side by side in one place
+- Discussion venue (issue tracking/wiki)
 
 * Branches
 
-- Good way to handle stable/dev versions
+- Good way to handle stable/development versions
 - Implement new features without risking changes in stable branches
-
-* git commands
-
-- clone -> create a local repository
-- status -> local repository info
-- diff -> what has changed since last commit
-- commit -> commit changes to local repo
-- push -> push local changes to remote repo (also new branch)
-- branch -> create a new local branch
-
-* Issue Tracking
-
-- Encourage good reports (templates)
-- Reproducable bugs are best
+- Forking and pull requests are an abstraction of branches
 
 * Documentation
 
@@ -69,15 +53,12 @@ Who am I?
 - Great for README, documentation, tutorials, etc.
 - You can intermingle HTML
 
-* Miscellaneous
-
-* Github commit hooks
-
-- Continuous Integration (CI)
 * The Bad
 
 - `git` isn't always intuitive
 - UI issues
-.image https://imgs.xkcd.com/comics/git.png
+.image https://imgs.xkcd.com/comics/git.png _ 320
 
+* Example
 
+https://github.com/bsurc/tmpnb
