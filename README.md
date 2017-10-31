@@ -1,4 +1,4 @@
-## Boise State R User's Group:
+## Boise State R User's Group
 
 The Boise State R User's Group is a semi-structured working group for R, with
 specific focus on ecology, biology, sociology, conservation science, and
