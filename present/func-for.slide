@@ -1,0 +1,22 @@
+Functions and Repetition
+1 Dec 2017
+
+Kyle Shannon
+Research Computing, Boise State University
+kyleshannon@boisestate.edu
+http://rcs.boisestate.edu
+
+* Functions
+- Small, self-contained sections of code
+- Typically does a specific task
+- Good for reducing duplicate code
+- Easier to test code
+
+* Loops
+- `for` allows you to iterate over collections or sequences
+- `R` also has `while` and `repeat` repetition, but they can be handled with `for`
+- Special statements control flow: `next` and `break`
+
+* Example
+
+.link https://jupyter.boisestate.edu/new?image=jupyter/datascience-notebook Jupyter
