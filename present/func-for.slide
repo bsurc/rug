@@ -11,11 +11,15 @@ http://rcs.boisestate.edu
 - Typically does a specific task
 - Good for reducing duplicate code
 - Easier to test code
+- Easier to understand code
 
-* Loops
+* Repetition
 - `for` allows you to iterate over collections or sequences
 - `R` also has `while` and `repeat` repetition, but they can be handled with `for`
 - Special statements control flow: `next` and `break`
+- Many repetition calls are hidden in `R`, for example:
+
+ min(c(1,2,3,4)) # for loop (or similar) written in C
 
 * Example
 
