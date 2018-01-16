@@ -1,0 +1,108 @@
+Interpreted and Compiled Programming Languages
+17 Feb 2018
+
+Kyle Shannon
+Research Computing, Boise State University
+kyleshannon+ug@boisestate.edu
+http://rcs.boisestate.edu
+
+* Introduction
+
+Who am I?
+
+- Programmer for Research Computing
+- Experience in ANSI C/C++ 98/Go/Python
+- Tiny bits of Java and Lua
+
+* Introduction
+
+What is a computer?
+
+- Incredibly dumb machine that can add fast
+- Consists of hardware that runs software
+- Processor, Memory, Disks, Network etc.
+
+What is programming?
+
+- Asking a computer to do something many times for you in a special language and dialect
+
+* Hardware
+
+Computers consist of a hierarchy of speedy things that move bits
+
+Processor -> series of caches -> memory -> disk/network
+
+* Processor
+
+- Processor can do a limited number of things to series of bits in it's registers
+- MUL, ADD, SUB, DIV, MOD, CMP, etc.
+
+* Software
+
+* Hello World!
+
+.code hello.asm
+
+* Programming Languages
+
+- Fortran, A, B, CPL, BCPL, yada, yada, then C:
+
+.code hello.c
+
+Then more!
+
+Python and R:
+
+.code hello.py
+
+Yada Yada...
+
+* Which one should I use?
+
+- Use whatever you want, provided it runs on multiple Operating Systems (OS)
+- Some are domain specific (R->stats, Python->Bioinformatics)
+- They all do the similar things at different levels of abstraction from the hardware
+- Some are missing features, some allow you to do nearly everything
+- We'll discuss interpreted vs compiled (specifically C) languages
+
+* The C Programming Language
+
+- Ubiquitous
+- Maps closely to underlying hardware
+- Gives insight to the machine as well as a language
+- This is by design
+- Underlying technology (with C++) for many languages
+- A few examples: Python (CPython), Lua, Java JVM, R (with C++)
+
+* Program Structure
+
+- Executables must have a single entry point (usually known as main)
+- Import external modules or declarations
+- Declare your functions
+- Declare your data structures
+- Declare your variables and constants
+- Program!
+
+* Interpreted Languages
+
+- Usually untyped or loosely typed
+- Almost all have a built in string type and arbitrary precision integers
+- Many are implemented in C and then the language itself
+- The general idea is easier programming, easier to read, and easy to learn
+- This is done by abstracting implementation details away
+- Some languages have an intermediate program written called byte code
+
+* Compiled languages
+
+- The program is run through another program and compiled to assembly
+- The assembly code is run directly by the machine (see hello.asm)
+- There is very little abstraction between the assembly and the hardware
+
+* Binding
+
+- Typically the interpreted language provides an API to write code in C that can be used in language
+- By writing a module in C, it can be compiled and called with less overhead than the interpreted language
+- Several core constructs are written this way, such as iteration, linear algebra, many others
+- Interpreted languages can be extended easily using this idea (cran)
+
+
