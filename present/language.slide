@@ -71,6 +71,7 @@ Yada Yada...
 - Maps closely to underlying hardware
 - Gives insight to the machine as well as a language
 - This is by design
+- ANSI C is 'the lowest common denominator'
 - Underlying technology (with C++) for many languages
 - A few examples: Python (CPython), Lua, Java JVM, R (with C++)
 
