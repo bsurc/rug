@@ -1,6 +1,10 @@
 library("RCurl")
 library("rjson")
 
+# API documentation:
+#
+# https://forecast-v3.weather.gov/documentation
+
 # Scheme for the api.  Other schemes include 'http', 'ftp', etc.
 scheme <- "https"
 # Host of the API service.
