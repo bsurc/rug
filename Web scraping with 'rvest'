@@ -1,0 +1,29 @@
+##Web Scraping
+install.packages("rvest")
+library(rvest)
+library(dplyr)
+packageDescription("rvest")
+##Authored and maintained by Hadley Wickham
+#must download 'selector grdget plug un for chrome "http://selectorgadget.com/"
+
+##I want to scrape google news for key words
+#https://news.google.com/news/?ned=us&gl=US&hl=en
+
+#Create item
+google<-html("https://news.google.com/news/?ned=us&gl=US&hl=en")
+##^this tells 'R' to go scrape the entire google news website and pull the html code in
+#Go to website and paste code from selector gadget into quotes 
+google %>%
+  html_nodes(".kzAuJ") %>%
+  html_text()
+
+##Another example...weather
+weather<-html("http://forecast.weather.gov/MapClick.php?lat=43.60761000000008&lon=-116.19339999999994#.WntDtainGUk")
+weather %>%
+  html_nodes("#detailed-forecast-body b , .forecast-text") %>%
+  html_text()
+##Last one, cheapest biology degrees
+cheapbio<-html("https://www.bestvalueschools.com/rankings/small-colleges-biology-degree/")
+cheapbio %>%
+  html_nodes("h3") %>%
+  html_text()
