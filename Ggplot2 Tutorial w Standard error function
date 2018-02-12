@@ -1,0 +1,60 @@
+##Import and examine dataset
+library(ape)
+data("carnivora")
+head(carnivora)
+?carnivora
+
+##Open GGplot2
+library(ggplot2)
+
+##Lets look at the qplot function first
+##Here's the usage
+##qplot(x, y, data=, color=, shape=, size=, alpha=, geom=, method=, formula=, facets=, xlim=, ylim= xlab=, ylab=, main=, sub=)
+##You can look up what all these mean very easily, we will only use a few of them
+##Types of graphs you can make with qplot:  "point", "smooth", "boxplot", "line", "histogram", "density", "bar", and "jitter"
+## Lets do boxplots first
+
+qplot (SuperFamily, LS, data = carnivora, geom = "point", xlab = "Super Family", main= "Average Litter Size of Caniformia vs Feliformia" ,ylab = "Average Litter Size" )
+
+##That's great, lets do something a little harder
+#Let's leave qplot world
+
+#I'm going to create a standard error function that I can use in my next plot
+#you should totally steal this. It will work for any dataset in R, just run it as is.
+
+seFunc <- function(x) {
+  n <- sum(!is.na(x))
+  se <- sd(x, na.rm = T)/sqrt(n)
+  lims <- c(mean(x) - se, mean(x) + se)
+  names(lims) <- c("ymin", "ymax")
+  return(lims)}
+
+#Lets make a graph that's really similar to that last one but with ggplot instead of qplot
+
+ggplot(carnivora, aes(x = SuperFamily, y = LS)) +
+  geom_boxplot()
+  
+#Lets do something harder and cooler
+
+
+
+ggplot(carnivora,aes(LS, FB,color=Family, na.rm=TRUE)) +
+  stat_summary(geom="errorbar",fun.data=seFunc,width=0,show.legend=F)+
+  stat_summary(geom="point",fun.y="mean",size=3) + 
+  stat_summary(geom="line",fun.y="mean")+
+  ggtitle("Big Brain, Small Big Litter??")+
+  xlab("Average Litter Size")+ylab("Average Brain Weight")+
+  theme(panel.grid = element_blank(),
+        axis.text=element_text(size=12),axis.title=element_text(size=14),
+        legend.key=element_blank(), legend.title=element_text(size=12),
+        legend.text=element_text(size=12),
+        panel.background = element_blank() ,
+        panel.border=element_rect(colour="black",fill=NA),
+        axis.line.x = element_line(size=0.5,colour = "black"), 
+        axis.line.y=element_line(size=0.5,colour="black"), 
+        plot.title=element_text(lineheight=.8, face="bold",size=16))
+
+
+
+
+
