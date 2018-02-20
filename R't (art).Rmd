@@ -1,0 +1,100 @@
+---
+title: "R't (art)"
+author: "Matt clark"
+date: "February 20, 2018"
+output: html_document
+---
+Disclaimer: This code comes from "Phyllotaxis: Draw flowers using mathematics" a free project on DataCamp. 
+https://www.datacamp.com/projects/62?utm_medium=fb%2Cig%2Can%2Cms-all&utm_source=fb_paid&utm_campaign=smartly_ppa&utm_id=5a85d82ac7e28c10880b34a9
+
+This is a short tutorial on making "flowers" in R. Good practice in ggplot and pretty fun.
+
+Let's set everything up
+
+```{r }
+library(ggplot2)
+# This sets plot images to a nice size.
+options(repr.plot.width = 4, repr.plot.height = 4)
+t <- seq(0, 2*pi, length.out = 50)
+x <- sin(t)
+y <- cos(t)
+df <- data.frame(t, x, y)
+```
+
+```{r}
+# Make a scatter plot of points in a circle
+p <- ggplot(df, aes(x, y))
+p +geom_point()
+```
+
+```{r}
+#set the arguments for a spiral
+points<-500
+angle<-pi*(3-sqrt(5))
+t <- (1:points) * angle
+x <- sin(t)
+y <-cos(t)
+df <- data.frame(t, x, y)
+# Make a scatter plot of points in a spiral
+p <- ggplot(df, aes(x*t, y*t))
+p +geom_point()
+```
+
+Lets remove all this background clutter
+
+```{r}
+#Remove everything unnecessary
+df <- data.frame(t, x, y)
+p <- ggplot(df, aes(x*t, y*t))
+p + geom_point() + theme(plot.background=element_rect(fill="white"),
+panel.background = element_rect(fill = "white"),
+axis.title = element_blank(), 
+axis.text = element_blank(),
+axis.ticks = element_blank())
+```
+
+Let's make it look a little more like a flower
+
+```{r}
+#dress it up
+p + geom_point(size=8,alpha=0.5, color="darkgreen") + 
+theme(plot.background=element_rect(fill="white"),
+panel.background = element_rect(fill = "white"),
+axis.title = element_blank(), 
+axis.text = element_blank(),
+axis.ticks = element_blank())
+```
+
+....This is supposed to be a dandelion...I'm not so sure though...
+
+```{r}
+#Make a dandelion
+p <- ggplot(df, aes(x*t, y*t))
+p +  geom_point(shape=(8),size=t,alpha=0.5, color="black") + 
+theme(plot.background=element_rect(fill="white"),
+panel.background = element_rect(fill = "white"),
+axis.title = element_blank(), 
+axis.text = element_blank(),
+axis.ticks = element_blank())
+```
+
+Here's the cool one
+
+```{r}
+##final flower
+angle <- 13*pi/180
+points <- 2000
+t <- (1:points)*angle
+x <- sin(t)
+y <- cos(t)
+df <- data.frame(t, x, y)
+p <- ggplot(df, aes(x*t, y*t))
+p+ geom_point(shape=(1),size=80,alpha=0.1, color="magenta4") + 
+  theme(plot.background=element_rect(fill="white"),
+        panel.background = element_rect(fill = "white"),
+        axis.title = element_blank(), 
+        axis.text = element_blank(),
+        axis.ticks = element_blank(),
+        panel.grid = element_blank())
+```
+
