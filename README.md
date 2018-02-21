@@ -19,6 +19,6 @@ General attendance is 10-20 students.
 Please [email](mailto:Matthewclark989@boisestate.edu)  Matt Clark if 
 you would like additional information 
 
-Sponsorship provided by the [R Consortium] (https://www.r-consortium.org/)
-![](
+Sponsorship provided by the [R Consortium](https://www.r-consortium.org/)
+
 
