@@ -21,5 +21,5 @@ you would like additional information
 
 Sponsorship provided by the [R Consortium](https://www.r-consortium.org/) and [Micron](https://www.micron.com/)
 ![](RConsortium_Vertical_Pantone.png)
-![](Micron_image.jpg)
+![](Micron image.jpg)
 
