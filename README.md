@@ -20,6 +20,8 @@ Please [email](mailto:Matthewclark989@boisestate.edu)  Matt Clark if
 you would like additional information 
 
 Sponsorship provided by the [R Consortium](https://www.r-consortium.org/) and [Micron](https://www.micron.com/)
+![](Micron_Logo.jpg)
 ![](RConsortium_Vertical_Pantone.png)
-![](Micron_image.jpg)
+
+
 
