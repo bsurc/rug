@@ -60,3 +60,7 @@ A normal URL with sematic meaning
 * Decoding the JSON Response
 
 .code web.R /DECODE/,/DECODE/
+
+* Demo
+
+.play rest.go /START/,/END/

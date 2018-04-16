@@ -66,6 +66,7 @@ func main() {
 	}
 
 	log.Print(endpoint.String())
+	// START OMIT
 	req, err := http.NewRequest(http.MethodGet, endpoint.String(), nil)
 	if err != nil {
 		log.Fatal(err)
@@ -89,4 +90,5 @@ func main() {
 	for _, p := range fcast.Properties.Periods {
 		fmt.Printf("%s: %d°%s\n", p.Name, p.Temperature, p.TemperatureUnit)
 	}
+	// END OMIT
 }
