@@ -1,0 +1,62 @@
+Using RESTful APIs
+
+20 April 2018
+
+Kyle Shannon
+Research Computing, Boise State University
+kyleshannon@boisestate.edu
+http://rcs.boisestate.edu
+
+* REST and JSON
+
+RESTful APIs are semantic services based on HTTP.  They provide a
+human-understandable method to access data from web services.
+
+* Example (NWS forecast)
+
+* Endpoint/Request
+
+A normal URL with sematic meaning
+
+    Scheme
+    ↓       Host
+    ↓       ↓               Path(service name)
+    ↓       ↓               ↓      Input(point location)
+    ↓       ↓               ↓      ↓                 Subservice
+    ↓       ↓               ↓      ↓                 ↓
+    https://api.weather.gov/points/43.5670,-116.2405/forecast
+
+* Response
+
+    "periods": [
+        {
+            "number": 1,
+            "name": "Today",
+            "startTime": "2018-04-16T11:00:00-06:00",
+            "endTime": "2018-04-16T18:00:00-06:00",
+            "isDaytime": true,
+            "temperature": 52,
+            "temperatureUnit": "F",
+            "temperatureTrend": null,
+            "windSpeed": "10 mph",
+            "windDirection": "WNW",
+            "icon": "https://api.weather.gov/icons/land/day/rain_showers,70/tsra,70?size=medium",
+            "shortForecast": "Chance Rain Showers then Slight Chance Showers And Thunderstorms",
+            "detailedForecast": "A chance of rain showers, then a slight chance of showers and thunderstorms. Mostly cloudy, with a high near 52. West northwest wind around 10 mph. Chance of precipitation is 70%."
+        },
+        {
+            "number": 2,
+            "name": "Tonight",
+            ...
+
+* Requesting Data in R
+
+.code web.R /REQUEST/,/REQUEST/
+
+* Setting up CURL
+
+.code web.R /CURL/,/CURL/
+
+* Decoding the JSON Response
+
+.code web.R /DECODE/,/DECODE/

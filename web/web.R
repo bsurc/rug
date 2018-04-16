@@ -5,6 +5,7 @@ library("rjson")
 #
 # https://forecast-v3.weather.gov/documentation
 
+# REQUEST OMIT
 # Scheme for the api.  Other schemes include 'http', 'ftp', etc.
 scheme <- "https"
 # Host of the API service.
@@ -18,8 +19,13 @@ lon <- -116.2405
 pointPath <- sprintf("/points/%.4f,%.4f/forecast", lat, lon)
 
 # The fully qualified URL
-apiURL <- sprintf("%s://%s/%s", scheme, host, pointPath)
+apiURL <- sprintf("%s://%s%s", scheme, host, pointPath)
 
+# REQUEST OMIT
+
+print(apiURL)
+
+# CURL OMIT
 # The actual API call redirects to a gridpoint API, so we'll follow redirects.
 redirect = TRUE
 
@@ -27,9 +33,11 @@ redirect = TRUE
 # header value, as well as explicitly set the format.
 hdr <- c("Accept:application/geo+json", "User-Agent:BSU/RUG")
 
-# Download the resoure at apiURL
+# Download the resource at apiURL
 data <- getURL(apiURL, httpheader=hdr, followlocation=redirect)
+# CURL OMIT
 
+# DECODE OMIT
 # The data is returned in JSON (actually GeoJSON), so we need to unmarshal it.
 x <- fromJSON(data)
 
@@ -37,3 +45,5 @@ x <- fromJSON(data)
 for(p in x$properties$periods) {
   print(sprintf("%s: %d°F", p$name, p$temperature))
 }
+
+# DECODE OMIT
